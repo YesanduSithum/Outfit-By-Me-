@@ -1,0 +1,43 @@
+/* height can be 70–80vh; adjust if you like */
+.main-swiper {
+  width: 100%;
+  height: 90vh;
+}
+
+.slide-content {
+  width: 100%;
+  height: 100%;
+  position: relative;                 /* NEW */
+}
+
+.slide-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                  /* fills nicely */
+  object-position: center;            /* centers the crop */
+}
+
+.overlay {                             /* existing overlay styles */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+
+.overlay h1 { margin-bottom: .5rem; }
+.overlay p  { margin-bottom: 1rem;  }
+.overlay button {
+  background: #e91e63;
+  border: none;
+  color: #fff;
+  padding: .75rem 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background .3s;
+}
+.overlay button:hover { background:#c2185b; }
