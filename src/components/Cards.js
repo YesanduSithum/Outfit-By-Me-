@@ -1,36 +1,47 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import '../Css/Cards.css';  // Adjusted path
-
+import { Link } from 'react-router-dom';     // NEW
+import '../Css/Cards.css';
 
 
 const cardData = [
-  { title: 'Wedding Wear', image: '/Wedding.jpg' },
-  { title: 'Party Wear', image: '/Party.jpg' },
-  { title: 'Book an Appointment', image: '/Appoinment.jpg' },
-  
+  {
+    title: 'Wedding Wear',
+    image: '/Wedding.jpg',
+    link: '/wedding-wear',                   // route already set up
+  },
+  {
+    title: 'Party Wear',
+    image: '/Party.jpg',
+    link: '/party-wear',                     // add a route later
+  },
+  {
+    title: 'Book an Appointment',
+    image: '/Appoinment.jpg',
+    link: '/appointment',                    // add a route later
+  },
 ];
 
 const Cards = () => {
   return (
-
-    
-    <div className="cards-container"  >
-      {cardData.map((card, index) => (
-        <motion.div
+    <div className="cards-container">
+      {cardData.map(({ title, image, link }, index) => (
+        <Link
           key={index}
-          className="card"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          to={link}
+          style={{ textDecoration: 'none', color: 'inherit' }} // keep default text colour
         >
-          <img src={card.image} alt={card.title} />
-          <h3>{card.title}</h3>
-        </motion.div>
+          <motion.div
+            className="card"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <img src={image} alt={title} />
+            <h3>{title}</h3>
+          </motion.div>
+        </Link>
       ))}
     </div>
-    
   );
 };
-
 
 export default Cards;
