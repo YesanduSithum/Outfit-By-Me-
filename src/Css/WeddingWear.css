@@ -2,6 +2,8 @@
   padding: 2rem;
   background: #fff;
   font-family: 'Segoe UI', sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 /* Tab Buttons */
@@ -11,7 +13,14 @@
   gap: 1rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
+  position: sticky;
+  top: 140px; /* Reduced from 80px to lower the buttons */
+  background: white;
+  z-index: 10;
+  padding: 10px 0;
+  margin-top: 20px; /* Added to create space above the buttons */
 }
+
 
 .tab-buttons button {
   padding: 0.7rem 1.8rem;
@@ -19,46 +28,53 @@
   background-color: #fff;
   color: #e91e63;
   font-weight: 600;
+  font-size: x-large;
   border-radius: 30px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.tab-buttons button:hover,
-.tab-buttons .active {
+.tab-buttons button:hover {
   background-color: #e91e63;
   color: #fff;
 }
 
-/* Tab Content */
+/* Wear Sections */
 .wear-section {
   display: flex;
-  align-items: center;
-  gap: 6rem;
-  margin-bottom: 4rem;
   flex-wrap: wrap;
-  animation: fadeIn 0.5s ease;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  scroll-margin-top: 150px;
+  padding-top: 30px;
 }
 
-.wear-section.reverse {
-  flex-direction: row-reverse;
+.image-container {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wear-img {
-  flex: 1;
-  min-width: 300px;
-}
-
-.wear-img img {
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
+  height: 600px;
+  object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 
+.text-container {
+  flex: 1;
+  min-width: 300px;
+}
+
 .wear-text {
-  flex: 2;
-  min-width: 400px;
+  padding: 1rem;
 }
 
 .wear-text h2 {
@@ -99,44 +115,20 @@
   color: #e91e63;
 }
 
-/* Fade animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-/* Buttons */
-.tab-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+/* Kandian Section Specific */
+.kandian-section {
+  flex-direction: row-reverse;
 }
 
-.tab-buttons button {
-  padding: 0.7rem 1.8rem;
-  border: 2px solid #e91e63;
-  background-color: #fff;
-  color: #e91e63;
-  font-weight: 600;
-  font-size: x-large;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.tab-buttons button:hover {
-  background-color: #e91e63;
-  color: #fff;
-}
-
-/* bottom Section - Why Us */
+/* Why Us Section */
 .why-us {
   background: linear-gradient(to right, #fff0f5, #fff);
   padding: 4rem 2rem;
   border-radius: 12px;
   text-align: center;
   margin-top: 4rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .why-us h2 {
@@ -154,6 +146,8 @@
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .reason {
@@ -162,9 +156,94 @@
   border-radius: 10px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   max-width: 300px;
+  flex: 1;
+  min-width: 250px;
 }
 
 .reason h3 {
   color: #e91e63;
   margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .wear-img {
+    height: 400px;
+  }
+  .wear-section {
+    scroll-margin-top: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wear-section {
+    flex-direction: column;
+    min-height: auto;
+    scroll-margin-top: 100px;
+    padding-top: 20px;
+  }
+  
+  .kandian-section {
+    flex-direction: column;
+  }
+  
+  .image-container, .text-container {
+    min-width: 100%;
+  }
+  
+  .wear-img {
+    height: 350px;
+    max-width: 100%;
+  }
+  
+  .tab-buttons {
+    top: 70px;
+    padding: 8px 0;
+  }
+  
+  .tab-buttons button {
+    font-size: large;
+    padding: 0.5rem 1.2rem;
+  }
+  
+  .wear-text h2 {
+    font-size: 1.5rem;
+  }
+  
+  .why-us {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .weddingwear-page {
+    padding: 1rem;
+  }
+  
+  .tab-buttons {
+    gap: 0.5rem;
+    top: 60px;
+  }
+  
+  .tab-buttons button {
+    font-size: medium;
+    padding: 0.4rem 1rem;
+  }
+  
+  .wear-img {
+    height: 300px;
+  }
+  
+  .reasons {
+    gap: 1rem;
+  }
+  
+  .reason {
+    padding: 1rem;
+    min-width: 100%;
+  }
+  
+  .wear-section {
+    scroll-margin-top: 80px;
+  }
 }

@@ -7,6 +7,8 @@ import 'aos/dist/aos.css';
 import HomePage from './Pages/HomePage';
 import WeddingWear from './Pages/WeddingWear';
 
+
+
 function App() {
   // Initialise scroll‑animations (AOS) once
   useEffect(() => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
+import { Link } from 'react-router-dom'; // Import Link for internal navigation
 import 'swiper/css';
 import 'swiper/css/pagination';
 import '../Css/Carousel.css';
@@ -11,6 +12,7 @@ const slides = [
     title: 'Wedding Collection',
     subtitle: 'We make your dream dress',
     buttonText: 'Visit Now',
+    link: '/wedding-wear', 
   },
   {
     image: '/carousel2.jpg',
