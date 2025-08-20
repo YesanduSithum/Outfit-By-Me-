@@ -27,3 +27,43 @@ footer p {
   color: #e91e63;
   transform: translateY(-4px) scale(1.12);
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  footer {
+    padding: 1.5rem;
+  }
+  
+  footer p {
+    font-size: 0.9rem;
+    margin-bottom: 0.9rem;
+  }
+  
+  .social-icons {
+    gap: 1.2rem;
+  }
+  
+  .social-icons a {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  footer {
+    padding: 1.2rem;
+  }
+  
+  footer p {
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.3px;
+  }
+  
+  .social-icons {
+    gap: 1rem;
+  }
+  
+  .social-icons a {
+    font-size: 1.1rem;
+  }
+}

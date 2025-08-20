@@ -41,3 +41,81 @@
   transition: background .3s;
 }
 .overlay button:hover { background:#c2185b; }
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .main-swiper {
+    height: 85vh;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-swiper {
+    height: 80vh;
+  }
+  
+  .overlay {
+    padding: 0.8rem 1.6rem;
+    width: 80%;
+  }
+  
+  .overlay h1 {
+    font-size: 1.8rem;
+  }
+  
+  .overlay p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-swiper {
+    height: 75vh;
+  }
+  
+  .overlay {
+    padding: 0.7rem 1.2rem;
+    width: 85%;
+  }
+  
+  .overlay h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .overlay p {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .overlay button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-swiper {
+    height: 70vh;
+  }
+  
+  .overlay {
+    padding: 0.6rem 1rem;
+    width: 90%;
+  }
+  
+  .overlay h1 {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .overlay p {
+    font-size: 0.85rem;
+    margin-bottom: 0.7rem;
+  }
+  
+  .overlay button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}

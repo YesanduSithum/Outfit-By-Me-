@@ -33,3 +33,51 @@
   font-weight: 600;
   font-size: 1.2rem;
 }
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .cards-container {
+    gap: 3rem;
+    padding: 3rem 3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .cards-container {
+    gap: 2.5rem;
+    padding: 2.5rem 2rem;
+  }
+  
+  .card img {
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .card img {
+    height: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .card img {
+    height: 350px;
+  }
+  
+  .card h3 {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
+}
