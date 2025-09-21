@@ -55,23 +55,7 @@ const HomePage = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="testimonials">
-        <h2>What Our Clients Say</h2>
-        <div className="testimonial-list">
-          <div className="testimonial">
-            <p>“My Kandian saree was absolutely stunning – everyone loved it!”</p>
-            <span>- Nuwani</span>
-          </div>
-          <div className="testimonial">
-            <p>“Outfit By Me made my wedding dress dream come true.”</p>
-            <span>- Tharushi</span>
-          </div>
-          <div className="testimonial">
-            <p>“Great service, fast delivery, and perfect fitting.”</p>
-            <span>- Dilani</span>
-          </div>
-        </div>
-      </section>
+      
 
       <Footer />
     </>
