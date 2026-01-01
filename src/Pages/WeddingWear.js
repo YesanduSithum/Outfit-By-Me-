@@ -1,21 +1,17 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../Css/WeddingWear.css';
 import Navbar from '../components/Navbar';
 
 const WeddingWear = () => {
-  const indianRef = useRef(null);
-  const kandianRef = useRef(null);
-  const westernRef = useRef(null);
-
   useEffect(() => {
     // Initialize AOS after a slight delay to ensure components are rendered
     setTimeout(() => {
       AOS.init({
         duration: 1000,
         once: true,
-        offset: 120 // This helps with scroll calculations
+        offset: 120
       });
     }, 100);
 
@@ -25,113 +21,93 @@ const WeddingWear = () => {
     }
   }, []);
 
-  const scrollTo = (ref) => {
-    if (ref.current) {
-      const headerOffset = 120;
-      const elementPosition = ref.current.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+  const weddingStyles = [
+    {
+      id: 'indian',
+      title: 'Indian Saree',
+      subtitle: 'Timeless Elegance & Cultural Richness',
+      description: 'The Indian bridal saree is a masterpiece of tradition. Made from rich fabrics like silk and brocade, it features elaborate embroidery and brilliant colors that capture the spirit of celebration.',
+      features: [
+        'Traditional patterns: Kanjeevaram, Banarasi, Mysore',
+        'Customizable blouses with embroidery and mirror work',
+        'Options for different body types and preferences',
+        'Matching jewellery and veils available'
+      ],
+      tailoring: '2–4 weeks',
+      image: '/indian.png'
+    },
+    {
+      id: 'kandian',
+      title: 'Kandian Saree',
+      subtitle: 'Graceful Sri Lankan Heritage',
+      description: 'Known as the Osariya, the Kandian saree is the pride of Sri Lankan tradition. With its regal drape and structured jacket, this look brings a queen-like elegance to every bride.',
+      features: [
+        'Peplum jacket design with lace or beadwork',
+        'Unique shoulder pleats and waist wrap',
+        'Option to include family heirlooms in the outfit',
+        'Matching bridal jewelry sets available'
+      ],
+      tailoring: '3–5 weeks',
+      image: '/kandian.png'
+    },
+    {
+      id: 'western',
+      title: 'Western Bridal Gown',
+      subtitle: 'Modern Elegance & Minimalist Charm',
+      description: 'From flowing A-line gowns to fitted mermaid dresses, Western wedding wear offers stylish options for every modern bride. Choose from luxurious lace, satin, or chiffon with custom cuts and silhouettes.',
+      features: [
+        'Custom necklines: sweetheart, off-shoulder, halter',
+        'Available with long trains or minimalist designs',
+        'Perfect for garden weddings, beach ceremonies, or receptions',
+        'Veils and accessories can be matched'
+      ],
+      tailoring: '2–6 weeks',
+      image: '/western.png'
     }
-  };
+  ];
 
   return (
     <>
       <Navbar />
       <div className="weddingwear-page">
-        {/* Scroll Buttons */}
-        <div className="tab-buttons">
-          <button onClick={() => scrollTo(indianRef)}>Indian</button>
-          <button onClick={() => scrollTo(kandianRef)}>Kandian</button>
-          <button onClick={() => scrollTo(westernRef)}>Western</button>
+        <div className="page-header" data-aos="fade-down">
+          <h1>Wedding Wear Collections</h1>
+          <p>Choose from our elegant wedding wear styles designed for your special day</p>
         </div>
 
-        {/* Indian Section */}
-        <section 
-          className="wear-section" 
-          ref={indianRef} 
-          data-aos="fade-up"
-          id="indian"
-        >
-          <div className="image-container">
-            <img src="/indian.png" alt="Indian Saree" className="wear-img" />
-          </div>
-          <div className="text-container">
-            <div className="wear-text">
-              <h2>Indian Saree</h2>
-              <h4>Timeless Elegance & Cultural Richness</h4>
-              <p>
-                The Indian bridal saree is a masterpiece of tradition. Made from rich fabrics like silk and brocade, it features elaborate embroidery and brilliant colors that capture the spirit of celebration.
-              </p>
-              <ul>
-                <li>Traditional patterns: Kanjeevaram, Banarasi, Mysore</li>
-                <li>Customizable blouses with embroidery and mirror work</li>
-                <li>Options for different body types and preferences</li>
-                <li>Matching jewellery and veils available</li>
-              </ul>
-              <p><strong>Tailoring Time:</strong> 2–4 weeks</p>
-            </div>
-          </div>
-        </section>
+        <div className="wedding-cards-container">
+          {weddingStyles.map((style, index) => (
+            <div 
+              key={style.id} 
+              className="wedding-card" 
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+              id={style.id}
+            >
+              <div className="wedding-card-image">
+                <img src={style.image} alt={style.title} />
+              </div>
+              <div className="wedding-card-content">
+                <h2>{style.title}</h2>
+                <h4>{style.subtitle}</h4>
+                <p className="description">{style.description}</p>
+                
+                <div className="features-box">
+                  <h5>Key Features:</h5>
+                  <ul>
+                    {style.features.map((feature, idx) => (
+                      <li key={idx}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
 
-        {/* Kandian Section */}
-        <section 
-          className="wear-section kandian-section" 
-          ref={kandianRef} 
-          data-aos="fade-up"
-          id="kandian"
-        >
-          <div className="text-container">
-            <div className="wear-text">
-              <h2>Kandian Saree</h2>
-              <h4>Graceful Sri Lankan Heritage</h4>
-              <p>
-                Known as the Osariya, the Kandian saree is the pride of Sri Lankan tradition. With its regal drape and structured jacket, this look brings a queen-like elegance to every bride.
-              </p>
-              <ul>
-                <li>Peplum jacket design with lace or beadwork</li>
-                <li>Unique shoulder pleats and waist wrap</li>
-                <li>Option to include family heirlooms in the outfit</li>
-                <li>Matching bridal jewelry sets available</li>
-              </ul>
-              <p><strong>Tailoring Time:</strong> 3–5 weeks</p>
+                <div className="tailoring-info">
+                  <strong>Tailoring Time:</strong> {style.tailoring}
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="image-container">
-            <img src="/kandian.png" alt="Kandian Saree" className="wear-img" />
-          </div>
-        </section>
-
-        {/* Western Section */}
-        <section 
-          className="wear-section" 
-          ref={westernRef} 
-          data-aos="fade-up"
-          id="western"
-        >
-          <div className="image-container">
-            <img src="/western.png" alt="Western Gown" className="wear-img" />
-          </div>
-          <div className="text-container">
-            <div className="wear-text">
-              <h2>Western Bridal Gown</h2>
-              <h4>Modern Elegance & Minimalist Charm</h4>
-              <p>
-                From flowing A-line gowns to fitted mermaid dresses, Western wedding wear offers stylish options for every modern bride. Choose from luxurious lace, satin, or chiffon with custom cuts and silhouettes.
-              </p>
-              <ul>
-                <li>Custom necklines: sweetheart, off-shoulder, halter</li>
-                <li>Available with long trains or minimalist designs</li>
-                <li>Perfect for garden weddings, beach ceremonies, or receptions</li>
-                <li>Veils and accessories can be matched</li>
-              </ul>
-              <p><strong>Tailoring Time:</strong> 2–6 weeks</p>
-            </div>
-          </div>
-        </section>
+          ))}
+        </div>
 
         {/* Why Choose Us Section */}
         <section className="why-us" data-aos="zoom-in">

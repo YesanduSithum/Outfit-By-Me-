@@ -40,11 +40,27 @@
 html {
   scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   color: #1a1a1a;
   background: #fdfdfd;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Mobile touch optimization */
+@media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: rgba(233, 30, 99, 0.1);
+  }
+  
+  html {
+    font-size: 16px;
+  }
 }
 
 /* Utility class for section spacing */

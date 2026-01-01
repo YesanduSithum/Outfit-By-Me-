@@ -22,15 +22,6 @@ const HomePage = () => {
         <a href="/appointment" className="btn-primary">Book Now</a>
       </section>
 
-      {/* Welcome Text */}
-      <div className="carousel-text">
-        <h2>Welcome to Outfit By Me</h2>
-        <p>
-          Discover your unique style with our curated collection of fashion-forward designs.
-          Whether you're dressing for comfort, confidence, or class — we've got something made just for you.
-        </p>
-      </div>
-
       {/* Cards Section */}
       <Cards />
 
@@ -43,10 +34,6 @@ const HomePage = () => {
         <div className="feature-card">
           <h3>🎉 Event Ready</h3>
           <p>Wedding, party, or casual – we’ve got collections for every occasion.</p>
-        </div>
-        <div className="feature-card">
-          <h3>🚚 Fast Delivery</h3>
-          <p>Timely delivery with optional express tailoring available.</p>
         </div>
         <div className="feature-card">
           <h3>💬 Free Consultation</h3>

@@ -1,249 +1,523 @@
 .weddingwear-page {
-  padding: 2rem;
-  background: #fff;
-  font-family: 'Segoe UI', sans-serif;
-  max-width: 1400px;
+  background: linear-gradient(135deg, #fef5f9 0%, #fff 50%, #fff5f8 100%);
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page Header */
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 1rem;
+}
+
+.page-header h1 {
+  font-size: 2.8rem;
+  background: linear-gradient(135deg, #e91e63 0%, #d81b60 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.page-header p {
+  font-size: 1.15rem;
+  color: #555;
+  max-width: 600px;
   margin: 0 auto;
-}
-
-/* Tab Buttons */
-.tab-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  position: sticky;
-  top: 140px; /* Reduced from 80px to lower the buttons */
-  background: white;
-  z-index: 10;
-  padding: 10px 0;
-  margin-top: 20px; /* Added to create space above the buttons */
-}
-
-
-.tab-buttons button {
-  padding: 0.7rem 1.8rem;
-  border: 2px solid #e91e63;
-  background-color: #fff;
-  color: #e91e63;
-  font-weight: 600;
-  font-size: x-large;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.tab-buttons button:hover {
-  background-color: #e91e63;
-  color: #fff;
-}
-
-/* Wear Sections */
-.wear-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 4rem;
-  align-items: center;
-  min-height: calc(100vh - 200px);
-  scroll-margin-top: 150px;
-  padding-top: 30px;
-}
-
-.image-container {
-  flex: 1;
-  min-width: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.wear-img {
-  width: 100%;
-  max-width: 450px;
-  height: 600px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-}
-
-.text-container {
-  flex: 1;
-  min-width: 300px;
-}
-
-.wear-text {
-  padding: 1rem;
-}
-
-.wear-text h2 {
-  color: #e91e63;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.wear-text h4 {
-  color: #666;
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
-
-.wear-text p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
   line-height: 1.6;
 }
 
-.wear-text ul {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 1rem;
+/* Wedding Cards Container */
+.wedding-cards-container {
+  display: grid;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
 }
 
-.wear-text ul li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
+/* Wedding Card */
+.wedding-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2.5rem;
+}
+
+.wedding-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(233, 30, 99, 0.15);
+}
+
+/* Alternate layout for even items */
+.wedding-card:nth-child(even) {
+  direction: rtl;
+}
+
+.wedding-card:nth-child(even) > * {
+  direction: ltr;
+}
+
+.wedding-card-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #f0f0f0 100%);
   position: relative;
-  padding-left: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.wear-text ul li::before {
-  content: '✔';
+.wedding-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.4s ease;
+  background: #fff;
+}
+
+.wedding-card:hover .wedding-card-image img {
+  transform: scale(1.03);
+}
+
+/* Card Content */
+.wedding-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.wedding-card-content h2 {
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, #e91e63 0%, #d81b60 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  font-weight: 700;
+}
+
+.wedding-card-content h4 {
+  font-size: 1.3rem;
+  color: #666;
+  margin: 0;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.wedding-card-content .description {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Features Box */
+.features-box {
+  background: linear-gradient(135deg, #fff5f8 0%, #fef8fb 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #e91e63;
+}
+
+.features-box h5 {
+  color: #e91e63;
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.features-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-box li {
+  font-size: 1rem;
+  color: #333;
+  padding: 0.7rem 0 0.7rem 2rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.features-box li::before {
+  content: '✨';
   position: absolute;
   left: 0;
   color: #e91e63;
+  font-size: 1.1rem;
 }
 
-/* Kandian Section Specific */
-.kandian-section {
-  flex-direction: row-reverse;
+.tailoring-info {
+  font-size: 1.05rem;
+  color: #555;
+  padding: 1rem;
+  background: rgba(233, 30, 99, 0.05);
+  border-radius: 8px;
+  margin: 0;
 }
+
+.tailoring-info strong {
+  color: #e91e63;
+  font-weight: 600;
+}
+
 
 /* Why Us Section */
 .why-us {
-  background: linear-gradient(to right, #fff0f5, #fff);
+  background: linear-gradient(135deg, #e91e63 0%, #d81b60 50%, #c2185b 100%);
   padding: 4rem 2rem;
-  border-radius: 12px;
+  border-radius: 25px;
   text-align: center;
-  margin-top: 4rem;
-  width: 100%;
-  box-sizing: border-box;
+  box-shadow: 0 15px 50px rgba(233, 30, 99, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-us::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulse 15s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.2); opacity: 0.5; }
 }
 
 .why-us h2 {
-  font-size: 2rem;
-  color: #e91e63;
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
 }
 
 .why-us h2 span {
-  color: #000;
+  color: #ffe0ec;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .reasons {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .reason {
   background: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  max-width: 300px;
-  flex: 1;
-  min-width: 250px;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.reason:hover {
+  transform: translateY(-10px);
 }
 
 .reason h3 {
   color: #e91e63;
-  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.reason p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
 /* Responsive Design */
-@media (max-width: 992px) {
-  .wear-img {
-    height: 400px;
+@media (max-width: 1024px) {
+  .wedding-card {
+    grid-template-columns: 1fr;
+    padding: 2rem;
   }
-  .wear-section {
-    scroll-margin-top: 120px;
+
+  .wedding-card:nth-child(even) {
+    direction: ltr;
+  }
+
+  .wedding-card-image {
+    aspect-ratio: 3 / 4;
+  }
+
+  .wedding-card-content h2 {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .wear-section {
-    flex-direction: column;
-    min-height: auto;
-    scroll-margin-top: 100px;
-    padding-top: 20px;
+  .weddingwear-page {
+    padding: 1.2rem 0.8rem;
   }
-  
-  .kandian-section {
-    flex-direction: column;
+
+  .page-header {
+    margin-bottom: 2rem;
+    padding: 1.5rem 0.8rem;
   }
-  
-  .image-container, .text-container {
-    min-width: 100%;
+
+  .page-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
   }
-  
-  .wear-img {
-    height: 350px;
-    max-width: 100%;
+
+  .page-header p {
+    font-size: 1rem;
   }
-  
-  .tab-buttons {
-    top: 70px;
-    padding: 8px 0;
+
+  .wedding-cards-container {
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
   }
-  
-  .tab-buttons button {
-    font-size: large;
-    padding: 0.5rem 1.2rem;
+
+  .wedding-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 16px;
   }
-  
-  .wear-text h2 {
-    font-size: 1.5rem;
+
+  .wedding-card-image {
+    aspect-ratio: 3 / 4;
   }
-  
+
+  .wedding-card-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .wedding-card-content h4 {
+    font-size: 1.1rem;
+  }
+
+  .wedding-card-content .description {
+    font-size: 0.95rem;
+  }
+
+  .features-box {
+    padding: 1.2rem;
+  }
+
+  .features-box h5 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .features-box li {
+    font-size: 0.95rem;
+    padding: 0.6rem 0 0.6rem 1.8rem;
+  }
+
+  .tailoring-info {
+    font-size: 0.95rem;
+  }
+
   .why-us {
-    padding: 2rem 1rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .why-us h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .reasons {
+    gap: 1.3rem;
+  }
+
+  .reason {
+    padding: 1.5rem;
+  }
+
+  .reason h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .reason p {
+    font-size: 0.9rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .weddingwear-page {
+    padding: 1rem 0.6rem;
+  }
+
+  .page-header {
+    margin-bottom: 1.5rem;
+    padding: 1.2rem 0.6rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.9rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .page-header p {
+    font-size: 0.95rem;
+  }
+
+  .wedding-cards-container {
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .wedding-card {
+    gap: 1.2rem;
+    padding: 1.2rem;
+    border-radius: 14px;
+  }
+
+  .wedding-card-image {
+    aspect-ratio: 3 / 4;
+    border-radius: 12px;
+  }
+
+  .wedding-card-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .wedding-card-content h4 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .wedding-card-content .description {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .features-box {
     padding: 1rem;
   }
-  
-  .tab-buttons {
-    gap: 0.5rem;
-    top: 60px;
+
+  .features-box h5 {
+    font-size: 0.95rem;
+    margin-bottom: 0.7rem;
   }
-  
-  .tab-buttons button {
-    font-size: medium;
-    padding: 0.4rem 1rem;
+
+  .features-box li {
+    font-size: 0.88rem;
+    padding: 0.5rem 0 0.5rem 1.6rem;
   }
-  
-  .wear-img {
-    height: 300px;
+
+  .features-box li::before {
+    font-size: 1rem;
   }
-  
+
+  .tailoring-info {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  .why-us {
+    padding: 2rem 1rem;
+    border-radius: 16px;
+  }
+
+  .why-us h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+  }
+
   .reasons {
     gap: 1rem;
   }
-  
+
   .reason {
-    padding: 1rem;
-    min-width: 100%;
+    padding: 1.3rem;
+    border-radius: 14px;
   }
-  
-  .wear-section {
-    scroll-margin-top: 80px;
+
+  .reason h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .reason p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .page-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .page-header p {
+    font-size: 0.9rem;
+  }
+
+  .wedding-card {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .wedding-card-image {
+    aspect-ratio: 3 / 4;
+  }
+
+  .wedding-card-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .wedding-card-content h4 {
+    font-size: 0.95rem;
+  }
+
+  .wedding-card-content .description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .features-box {
+    padding: 0.9rem;
+  }
+
+  .features-box h5 {
+    font-size: 0.9rem;
+  }
+
+  .features-box li {
+    font-size: 0.82rem;
+    padding: 0.4rem 0 0.4rem 1.5rem;
+  }
+
+  .why-us h2 {
+    font-size: 1.5rem;
+  }
+
+  .reason h3 {
+    font-size: 1.05rem;
+  }
+
+  .reason p {
+    font-size: 0.8rem;
   }
 }
